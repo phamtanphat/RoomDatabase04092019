@@ -1,29 +1,30 @@
 package com.example.roomdatabase04092019;
 
 import android.content.Context;
+import android.database.Cursor;
 
 import java.util.ArrayList;
 
-public class SinhvienRespository {
+public class SinhvienRepository {
 
-    private static SinhvienRespository instance = null;
+    private static SinhvienRepository instance = null;
     private SinhvienDao sinhvienDao;
 
 
-    private SinhvienRespository(Context context){
+    private SinhvienRepository(Context context){
         SinhvienDatabase sinhvienDatabase = SinhvienDatabase.getInstance(context);
         sinhvienDao = sinhvienDatabase.sinhvienDao();
     }
 
-    public static SinhvienRespository getInstance(Context context){
+    public static SinhvienRepository getInstance(Context context){
         if (instance == null){
-            instance = new SinhvienRespository(context);
+            instance = new SinhvienRepository(context);
         }
         return instance;
     }
 
 
-    public ArrayList<Sinhvien> getAllSinhVien(){
+    public Cursor getAllSinhVien(){
         return sinhvienDao.getAllSinhVien();
     }
 
