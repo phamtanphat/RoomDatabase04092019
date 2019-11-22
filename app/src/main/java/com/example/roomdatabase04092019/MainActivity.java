@@ -14,5 +14,8 @@ public class MainActivity extends AppCompatActivity {
         // 1 : Enitity
         // 2 : Dao
         // 3 : Database
+        SinhvienDatabase.getInstance(this).sinhvienDao().getAllSinhVien();
+
+
     }
 }
