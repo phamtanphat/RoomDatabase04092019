@@ -10,7 +10,6 @@ public class SinhvienRepository {
     private static SinhvienRepository instance = null;
     private SinhvienDao sinhvienDao;
 
-
     private SinhvienRepository(Context context){
         SinhvienDatabase sinhvienDatabase = SinhvienDatabase.getInstance(context);
         sinhvienDao = sinhvienDatabase.sinhvienDao();
@@ -23,9 +22,11 @@ public class SinhvienRepository {
         return instance;
     }
 
-
     public Cursor getAllSinhVien(){
         return sinhvienDao.getAllSinhVien();
     }
 
+    public void insertSinhvien(String name , int age , String address){
+        sinhvienDao.insertData(name , age , address);
+    }
 }

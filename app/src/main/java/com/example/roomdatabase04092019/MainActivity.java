@@ -20,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
         // 2 : Dao
         // 3 : Database
 
-        Cursor cursor = sinhvienRepository.getAllSinhVien();
-        Log.d("BBB",cursor.getCount() + "");
+//        Cursor cursor = sinhvienRepository.getAllSinhVien();
+//        Log.d("BBB",cursor.getCount() + "");
 
+        sinhvienRepository.insertSinhvien("Nguyễn Văn A" , 1990 , "Quận 1");
 
     }
 }

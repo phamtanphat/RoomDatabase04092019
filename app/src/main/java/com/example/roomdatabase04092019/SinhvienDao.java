@@ -5,11 +5,12 @@ import android.database.Cursor;
 import androidx.room.Dao;
 import androidx.room.Query;
 
-import java.util.ArrayList;
-
 @Dao
 public interface SinhvienDao {
 
     @Query("SELECT * FROM Sinhvien")
     Cursor getAllSinhVien();
+
+    @Query("INSERT INTO Sinhvien VALUES (null,:name,:age,:address)")
+    void insertData(String name , int age , String address);
 }
