@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        Cursor cursor = sinhvienRepository.getAllSinhVien();
 //        Log.d("BBB",cursor.getCount() + "");
-
-        sinhvienRepository.insertSinhvien("Nguyễn Văn A" , 1990 , "Quận 1");
-
+        long currentid = sinhvienRepository.insertSinhvien(new Sinhvien(null,"Nguyễn Văn C",1992,"Quận3"));
+        Log.d("BBB",currentid + "");
     }
 }

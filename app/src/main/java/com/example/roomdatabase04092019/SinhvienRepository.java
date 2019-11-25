@@ -26,7 +26,7 @@ public class SinhvienRepository {
         return sinhvienDao.getAllSinhVien();
     }
 
-    public void insertSinhvien(String name , int age , String address){
-        sinhvienDao.insertData(name , age , address);
+    public long insertSinhvien(Sinhvien sinhvien){
+        return sinhvienDao.insertData(sinhvien);
     }
 }

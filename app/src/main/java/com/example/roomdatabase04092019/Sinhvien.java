@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 public class Sinhvien {
 
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    public Integer id;
 
     public String name;
 
@@ -17,4 +17,13 @@ public class Sinhvien {
 
     public String address;
 
+    public Sinhvien(Integer id, String name, int age, String address) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
+    public Sinhvien() {
+    }
 }
