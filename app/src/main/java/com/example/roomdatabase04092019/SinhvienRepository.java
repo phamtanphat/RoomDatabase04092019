@@ -26,7 +26,4 @@ public class SinhvienRepository {
         return sinhvienDao.getAllSinhVien();
     }
 
-    public long insertSinhvien(Sinhvien sinhvien){
-        return sinhvienDao.insertData(sinhvien);
-    }
 }

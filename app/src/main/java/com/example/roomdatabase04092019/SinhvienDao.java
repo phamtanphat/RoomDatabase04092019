@@ -12,9 +12,4 @@ public interface SinhvienDao {
     @Query("SELECT * FROM Sinhvien")
     Cursor getAllSinhVien();
 
-//    @Query("INSERT INTO Sinhvien VALUES (null,:name,:age,:address)")
-//    void insertData(String name , int age , String address);
-
-    @Insert(entity = Sinhvien.class)
-    Long insertData(Sinhvien sinhvien);
 }
