@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 //(tableName = "Sinhvien")
 @Entity
 public class Sinhvien {
@@ -25,5 +28,15 @@ public class Sinhvien {
     }
 
     public Sinhvien() {
+    }
+
+    public static ArrayList<Sinhvien> mockSinhvien(){
+        int cout = 1;
+        ArrayList<Sinhvien> sinhviens = new ArrayList<>();
+        while (cout <= 10){
+            sinhviens.add(new Sinhvien(cout,"Nguyen van A", 20 ,"Quan 1"));
+            cout++;
+        }
+        return sinhviens;
     }
 }
