@@ -5,8 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <androidx.recyclerview.widget.RecyclerView
+        android:background="#ECECEC"
+        tools:listitem="@layout/item_sinhvien"
         android:id="@+id/recycleSinhvien"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
