@@ -15,6 +15,10 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Sinhvi
 
     ArrayList<Sinhvien> sinhviens;
 
+    public SinhvienAdapter(ArrayList<Sinhvien> sinhviens) {
+        this.sinhviens = sinhviens;
+    }
+
     @NonNull
     @Override
     public SinhvienHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

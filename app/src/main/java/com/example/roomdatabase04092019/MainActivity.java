@@ -1,23 +1,33 @@
 package com.example.roomdatabase04092019;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    RecyclerView rvSinhvien;
+    SinhvienAdapter sinhvienAdapter;
+    ArrayList<Sinhvien> sinhvienArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        rvSinhvien = findViewById(R.id.recycleSinhvien);
+
+        sinhvienArrayList = Sinhvien.mockSinhvien();
+        sinhvienAdapter = new SinhvienAdapter(sinhvienArrayList);
+        rvSinhvien.setLayoutManager(new LinearLayoutManager(this));
+        rvSinhvien.setHasFixedSize(true);
+        rvSinhvien.setAdapter(sinhvienAdapter);
     }
 
     @Override
