@@ -17,6 +17,52 @@
             layout="@layout/layout_loading" />
     </RelativeLayout>
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#f20"
+        android:textAllCaps="true"
+        android:text="@string/label_title_insert"
+        android:id="@+id/textviewTitle"
+        style="@style/TextDefault"/>
+    <EditText
+        android:hint="@string/label_edit_name"
+        android:layout_below="@id/textviewTitle"
+        android:layout_marginTop="50dp"
+        android:id="@+id/edittextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="@string/label_edit_age"
+        android:layout_below="@id/edittextName"
+        android:layout_marginTop="50dp"
+        android:id="@+id/edittextAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="@string/label_edit_address"
+        android:layout_below="@id/edittextAge"
+        android:layout_marginTop="50dp"
+        android:id="@+id/edittextDiachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/edittextDiachi"
+        android:text="@string/label_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_alignParentRight="true"
+        android:id="@+id/buttonInsert"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/edittextDiachi"
+        android:text="Thêm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 </RelativeLayout>
