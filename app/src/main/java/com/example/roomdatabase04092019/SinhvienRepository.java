@@ -3,8 +3,6 @@ package com.example.roomdatabase04092019;
 import android.content.Context;
 import android.database.Cursor;
 
-import java.util.ArrayList;
-
 public class SinhvienRepository {
 
     private static SinhvienRepository instance = null;
@@ -24,6 +22,9 @@ public class SinhvienRepository {
 
     public Cursor getAllSinhVien(){
         return sinhvienDao.getAllSinhVien();
+    }
+    public void insertSinhvien(String name , String age , String address){
+        sinhvienDao.insertSinhvien(name,age,address);
     }
 
 }

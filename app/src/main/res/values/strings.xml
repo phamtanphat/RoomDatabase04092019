@@ -6,4 +6,7 @@
     <string name="label_edit_address">Nhập địa chỉ</string>
     <string name="label_cancel">Hủy</string>
     <string name="label_alert_edit_null">Nhập đủ thông trước khi thêm!!</string>
+    <string name="label_alert_error_form">Sai định dạng</string>
+    <string name="label_success_insert">Thêm sinh viên thành công</string>
+    <string name="label_fail_insert">Lỗi thêm thất bại</string>
 </resources>

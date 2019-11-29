@@ -4,6 +4,7 @@ import android.database.Cursor;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 @Dao
@@ -12,4 +13,6 @@ public interface SinhvienDao {
     @Query("SELECT * FROM Sinhvien")
     Cursor getAllSinhVien();
 
+    @Query("INSERT INTO Sinhvien VALUES (null ,:name , :age , :address)")
+    void insertSinhvien(String name , String age , String address);
 }

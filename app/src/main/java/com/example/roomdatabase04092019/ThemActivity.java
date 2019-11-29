@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 public class ThemActivity extends AppCompatActivity {
 
+    SinhvienRepository sinhvienRepository;
     EditText edtName,edtAge,edtAddress;
     Button btnCancel,btnInsert;
     @Override
@@ -38,16 +40,21 @@ public class ThemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name = edtName.getText().toString();
-                String age = edtName.getText().toString();
-                String address = edtName.getText().toString();
+                String age = edtAge.getText().toString();
+                String address = edtAddress.getText().toString();
 
                 if (!name.isEmpty() && !age.isEmpty() && !address.isEmpty()){
-                    if (name.matches("^[A-Za-z]+$")){
+                    if (name.matches("[A-Za-z ]+")){
+                        try {
+                            sinhvienRepository.insertSinhvien(name,age,address);
+                            Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_success_insert), Toast.LENGTH_SHORT).show();
+                        }catch (Exception e) {
+                            Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_fail_insert), Toast.LENGTH_SHORT).show();
+                        }
 
                     }else{
-                        Toast.makeText(ThemActivity.this, "Sai định dạng", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_alert_error_form), Toast.LENGTH_SHORT).show();
                     }
-
                 }else{
                     Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_alert_edit_null), Toast.LENGTH_SHORT).show();
                 }
