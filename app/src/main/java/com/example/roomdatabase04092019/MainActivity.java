@@ -1,5 +1,6 @@
 package com.example.roomdatabase04092019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvSinhvien;
     SinhvienAdapter sinhvienAdapter;
     ArrayList<Sinhvien> sinhvienArrayList;
+    int Request_Code_Insert = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.item_menu_insert :
-                Toast.makeText(this, "Item menu sert", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,ThemActivity.class);
+                startActivityForResult(intent,Request_Code_Insert);
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -26,6 +26,8 @@
         android:id="@+id/textviewTitle"
         style="@style/TextDefault"/>
     <EditText
+        android:maxLength="50"
+        android:maxLines="1"
         android:hint="@string/label_edit_name"
         android:layout_below="@id/textviewTitle"
         android:layout_marginTop="50dp"
@@ -33,6 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
+        android:inputType="number"
+        android:maxLength="4"
+        android:maxLines="1"
         android:hint="@string/label_edit_age"
         android:layout_below="@id/edittextName"
         android:layout_marginTop="50dp"
@@ -40,17 +45,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
+        android:maxLength="100"
+        android:maxLines="1"
         android:hint="@string/label_edit_address"
         android:layout_below="@id/edittextAge"
         android:layout_marginTop="50dp"
-        android:id="@+id/edittextDiachi"
+        android:id="@+id/edittextAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/buttonCancel"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="100dp"
-        android:layout_below="@id/edittextDiachi"
+        android:layout_below="@id/edittextAddress"
         android:text="@string/label_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -59,7 +66,7 @@
         android:id="@+id/buttonInsert"
         android:layout_marginRight="50dp"
         android:layout_marginTop="100dp"
-        android:layout_below="@id/edittextDiachi"
+        android:layout_below="@id/edittextAddress"
         android:text="Thêm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

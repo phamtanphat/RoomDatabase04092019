@@ -5,4 +5,5 @@
     <string name="label_edit_age">Nhập năm sinh</string>
     <string name="label_edit_address">Nhập địa chỉ</string>
     <string name="label_cancel">Hủy</string>
+    <string name="label_alert_edit_null">Nhập đủ thông trước khi thêm!!</string>
 </resources>
