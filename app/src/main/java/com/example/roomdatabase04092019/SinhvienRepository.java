@@ -23,8 +23,8 @@ public class SinhvienRepository {
     public Cursor getAllSinhVien(){
         return sinhvienDao.getAllSinhVien();
     }
-    public void insertSinhvien(String name , String age , String address){
-        sinhvienDao.insertSinhvien(name,age,address);
+    public long insertSinhvien(Sinhvien sinhvien){
+        return sinhvienDao.insertSinhvien(sinhvien);
     }
 
 }

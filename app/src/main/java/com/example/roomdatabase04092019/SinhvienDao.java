@@ -13,6 +13,6 @@ public interface SinhvienDao {
     @Query("SELECT * FROM Sinhvien")
     Cursor getAllSinhVien();
 
-    @Query("INSERT INTO Sinhvien VALUES (null ,:name , :age , :address)")
-    void insertSinhvien(String name , String age , String address);
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    long insertSinhvien(Sinhvien sinhvien);
 }

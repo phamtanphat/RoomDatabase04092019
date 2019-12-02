@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 public class ThemActivity extends AppCompatActivity {
 
-    SinhvienRepository sinhvienRepository;
-    EditText edtName,edtAge,edtAddress;
-    Button btnCancel,btnInsert;
+
+    EditText edtName, edtAge, edtAddress;
+    Button btnCancel, btnInsert;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,19 +44,22 @@ public class ThemActivity extends AppCompatActivity {
                 String age = edtAge.getText().toString();
                 String address = edtAddress.getText().toString();
 
-                if (!name.isEmpty() && !age.isEmpty() && !address.isEmpty()){
-                    if (name.matches("[A-Za-z ]+")){
-                        try {
-                            sinhvienRepository.insertSinhvien(name,age,address);
+                if (!name.isEmpty() && !age.isEmpty() && !address.isEmpty()) {
+                    if (name.matches("[A-Za-z ]+")) {
+                        long rowId = SinhvienRepository
+                                .getInstance(ThemActivity.this)
+                                .insertSinhvien(
+                                        new Sinhvien(null, name, Integer.parseInt(age), address)
+                                );
+                        if (rowId > 0) {
                             Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_success_insert), Toast.LENGTH_SHORT).show();
-                        }catch (Exception e) {
+                        } else {
                             Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_fail_insert), Toast.LENGTH_SHORT).show();
                         }
-
-                    }else{
+                    } else {
                         Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_alert_error_form), Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_alert_edit_null), Toast.LENGTH_SHORT).show();
                 }
             }
