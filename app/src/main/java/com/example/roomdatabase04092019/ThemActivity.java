@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class ThemActivity extends AppCompatActivity {
@@ -15,6 +17,7 @@ public class ThemActivity extends AppCompatActivity {
 
     EditText edtName, edtAge, edtAddress;
     Button btnCancel, btnInsert;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class ThemActivity extends AppCompatActivity {
         edtAge = findViewById(R.id.edittextAge);
         btnCancel = findViewById(R.id.buttonCancel);
         btnInsert = findViewById(R.id.buttonInsert);
-
+        relativeLayout = findViewById(R.id.relativeLoading);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +55,15 @@ public class ThemActivity extends AppCompatActivity {
                                         new Sinhvien(null, name, Integer.parseInt(age), address)
                                 );
                         if (rowId > 0) {
-                            Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_success_insert), Toast.LENGTH_SHORT).show();
-                        } else {
+                            relativeLayout.setVisibility(View.VISIBLE);
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_success_insert), Toast.LENGTH_SHORT).show();
+                                    relativeLayout.setVisibility(View.GONE);
+                                }
+                            },2000);
+                            } else {
                             Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_fail_insert), Toast.LENGTH_SHORT).show();
                         }
                     } else {
