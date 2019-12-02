@@ -61,6 +61,8 @@ public class ThemActivity extends AppCompatActivity {
                                 public void run() {
                                     Toast.makeText(ThemActivity.this, getResources().getString(R.string.label_success_insert), Toast.LENGTH_SHORT).show();
                                     relativeLayout.setVisibility(View.GONE);
+                                    setResult(RESULT_OK);
+                                    finish();
                                 }
                             },2000);
                             } else {
