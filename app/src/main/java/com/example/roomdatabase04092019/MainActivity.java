@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -35,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         rvSinhvien.setLayoutManager(new LinearLayoutManager(this));
         rvSinhvien.setHasFixedSize(true);
         rvSinhvien.setAdapter(sinhvienAdapter);
-
         getAllSinhvien();
     }
 
     private void getAllSinhvien() {
+        sinhvienArrayList.clear();
         Cursor cursor = SinhvienRepository.getInstance(this).getAllSinhVien();
         while (cursor.moveToNext()){
             int id = cursor.getInt(0);
@@ -70,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
+        if (requestCode == Appconstant.Request_Code_Insert && resultCode == RESULT_OK){
+            getAllSinhvien();
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
